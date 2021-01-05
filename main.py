@@ -1,9 +1,9 @@
 from fastapi.exceptions import HTTPException
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
-from tortoise import Tortoise
 from config.database_config import data_base_config
 from tortoise.contrib.fastapi import register_tortoise
+from routers import category_api, keyword_api
 
 app = FastAPI(title="Expense tracker")
 
@@ -15,9 +15,6 @@ register_tortoise(
     add_exception_handlers=True,
 )
 
-Tortoise.init_models(["_models_"], "models")
-
-from routers import category_api, keyword_api
 app.include_router(category_api.router)
 app.include_router(keyword_api.router)
 

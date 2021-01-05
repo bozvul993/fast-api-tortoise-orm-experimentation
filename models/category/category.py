@@ -1,8 +1,7 @@
 from tortoise.fields.data import DatetimeField
 from tortoise.models import Model
 from tortoise.fields import UUIDField, CharField
-from tortoise.fields.relational import ManyToManyField, ManyToManyRelation
-from tortoise.contrib.pydantic import pydantic_model_creator
+from tortoise.fields.relational import ManyToManyField
 
 
 class Category(Model):
@@ -14,11 +13,3 @@ class Category(Model):
     )
     created_on = DatetimeField(auto_now_add=True)
     updated_on = DatetimeField(auto_now=True)
-
-
-Category_dto = pydantic_model_creator(Category, name="Category")
-
-CategoryCreate_dto = pydantic_model_creator(
-    Category, name="CategoryCreate", exclude=("id", "created_on", "updated_on"))
-CategoryEdit_dto = pydantic_model_creator(
-    Category, name="CategoryEdit", exclude=("created_on", "updated_on"))

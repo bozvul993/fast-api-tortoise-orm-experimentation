@@ -1,5 +1,5 @@
 from typing import List
-from models.category import Category, CategoryCreate_dto, Category_dto
+from schemas.category import Category, CategoryCreate_dto, Category_dto
 from repositories.category_repository import CategoryRepository
 
 
