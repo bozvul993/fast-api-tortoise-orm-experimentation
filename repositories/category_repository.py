@@ -1,7 +1,9 @@
 from models.keyword import Keyword
 from typing import List
+
+from schemas.category import Category_dto, CategoryCreate_dto
 from util.exceptions.not_found import NotFoundHTTP
-from models.category import Category, CategoryCreate_dto, Category_dto
+from models.category.category import Category
 from tortoise.query_utils import Q
 
 

@@ -1,4 +1,4 @@
-from models.category import CategoryCreate_dto, Category_dto
+from schemas.category import CategoryCreate_dto, Category_dto
 from models.basic.uuid_list import UUIDList
 from typing import List
 from use_cases.category.category_use_cases import CategoryUseCases
